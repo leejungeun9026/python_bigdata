@@ -29,8 +29,6 @@ driver.get('https://store.kakao.com/home/best?tab=contProduct&groupId=all&period
 time.sleep(3)
 
 # 스크롤하기
-# 윈도우의 높이
-last_height = driver.execute_script("return window.scrollY")
 # 현재 페이지의 전체스크롤
 pre_height = driver.execute_script("return document.body.scrollHeight")
 

@@ -29,7 +29,7 @@ print(wine.shape) # (6497, 13)
 
 
 # 5. 병합한 파일(wine.csv) 내보내기
-wine.to_csv('day08/wine.csv', index=False)
+wine.to_csv('day08\\wine.csv', index=False)
 
 
 

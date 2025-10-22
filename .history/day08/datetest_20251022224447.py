@@ -92,11 +92,11 @@ mpl.rc('font', family=font_name)
 
 # 차트 생성
 plt.bar(x, y)
-plt.title(f'{file_name} 가격대별 항공권 개수')
+plt.title('가격대별 항공권 개수')
 plt.xlabel('가격')
 plt.xticks(rotation=45)
 plt.ylabel('항공권 수')
-plt.show()
+# plt.show()
 
 
 
@@ -115,5 +115,4 @@ y = value_counts.tolist()
 
 # 차트 생성
 plt.pie(y, labels=x, autopct='%.1f%%')
-plt.title(f'{file_name} 항공사별 항공권 비율')
 plt.show()

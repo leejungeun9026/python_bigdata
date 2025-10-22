@@ -57,8 +57,7 @@ for data in files :
 con.commit()
 
 
-##### bar 차트 #####
-# DB에서 가격대별 갯수 가져오기
+# 그래프 그리기
 sql_select = f"""
 SELECT
 	CASE
@@ -80,7 +79,6 @@ GROUP BY PRICERANGE"""
 cur.execute(sql_select)
 result = cur.fetchall()
 
-# DataFrame으로 만들어서 배열에 담기
 df_result = pd.DataFrame(result, columns=('price', 'count'))
 x = df_result['price'].tolist()
 y = df_result['count'].tolist()
@@ -90,30 +88,20 @@ y = df_result['count'].tolist()
 font_name = mpl.font_manager.FontProperties(fname='/System/Library/Fonts/AppleSDGothicNeo.ttc').get_name()
 mpl.rc('font', family=font_name)
 
-# 차트 생성
 plt.bar(x, y)
-plt.title(f'{file_name} 가격대별 항공권 개수')
+plt.title('가격대별 항공권 개수')
 plt.xlabel('가격')
 plt.xticks(rotation=45)
 plt.ylabel('항공권 수')
-plt.show()
+# plt.show()
 
 
 
-
-##### 파이차트 #####
-# 전체 DB 가져와서 DataFrame에 담기
 sql_select = f" SELECT * FROM `{file_name}`"
 cur.execute(sql_select)
 result = cur.fetchall()
 df_result = pd.DataFrame(result, columns=('airline', 'start_time', 'end_time', 'seat_type', 'price'))
 
-# airline 개수 구하고 배열에 담기
-value_counts = df_result['airline'].value_counts()
-x = value_counts.index.tolist()
-y = value_counts.tolist()
-
-# 차트 생성
-plt.pie(y, labels=x, autopct='%.1f%%')
-plt.title(f'{file_name} 항공사별 항공권 비율')
-plt.show()
+print(df_result['airline'].value_counts())
+# plt.pie(y, labels=x, autopct='%.1f%%')
+# plt.show()

@@ -2,13 +2,13 @@ import pandas as pd
 
 ##### ✅ 데이터 전처리 ######
 # 1. 파일 읽기
-red_df = pd.read_csv('day08/winequality-red.csv', sep=';', header=0, engine='python')
-white_df = pd.read_csv('day08/winequality-white.csv', sep=';', header=0, engine='python')
+red_df = pd.read_csv('day08\\winequality-red.csv', sep=';', header=0, engine='python')
+white_df = pd.read_csv('day08\\winequality-white.csv', sep=';', header=0, engine='python')
 
 
 # 2. 구분자를 ,로 바꿔서 저장하기
-red_df.to_csv('day08/winequality-red2.csv', index=False)
-white_df.to_csv('day08/winequality-white2.csv', index=False)
+red_df.to_csv('day08\\winequality-red2.csv', index=False)
+white_df.to_csv('day08\\winequality-white2.csv', index=False)
 
 print(red_df.head())
 
@@ -29,7 +29,7 @@ print(wine.shape) # (6497, 13)
 
 
 # 5. 병합한 파일(wine.csv) 내보내기
-wine.to_csv('day08/wine.csv', index=False)
+wine.to_csv('day08\\wine.csv', index=False)
 
 
 
@@ -64,7 +64,7 @@ print(wine.quality.value_counts())
 
 
 ##### ✅ 데이터 모델링 ######
-# 1. 그룹 비교1: describe() 함수 이용
+# 1. 그룹 비교1: describe() 함수 이용 
 # type을 기준으로 그룹을 나눈 뒤 quality속성을 기준으로 기술통계를 구함
 print('\n===== describe =====')
 print(wine.groupby('type')['quality'].describe())

@@ -115,5 +115,4 @@ y = value_counts.tolist()
 
 # 차트 생성
 plt.pie(y, labels=x, autopct='%.1f%%')
-plt.title(f'{file_name} 항공사별 항공권 비율')
 plt.show()

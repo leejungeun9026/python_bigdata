@@ -180,8 +180,8 @@ x = df_result['price'].tolist()
 y = df_result['count'].tolist()
 
 # 폰트 설정
-# font_name = mpl.font_manager.FontProperties(fname='c:/Windows/fonts/malgun.ttf').get_name()
-font_name = mpl.font_manager.FontProperties(fname='/System/Library/Fonts/AppleSDGothicNeo.ttc').get_name()
+font_name = mpl.font_manager.FontProperties(fname='c:/Windows/fonts/malgun.ttf').get_name()
+# font_name = mpl.font_manager.FontProperties(fname='/System/Library/Fonts/AppleSDGothicNeo.ttc').get_name()
 mpl.rc('font', family=font_name)
 
 # 차트 생성
@@ -191,7 +191,6 @@ plt.xlabel('가격')
 plt.xticks(rotation=45)
 plt.ylabel('항공권 수')
 plt.show()
-
 
 
 
@@ -209,5 +208,5 @@ y = value_counts.tolist()
 
 # 차트 생성
 plt.pie(y, labels=x, autopct='%.1f%%')
-plt.title(f'{file_name} 항공사별 항공권 비율')
+plt.title(f'{file_name} 항공사 비율')
 plt.show()
